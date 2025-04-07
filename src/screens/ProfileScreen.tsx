@@ -14,7 +14,7 @@ const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     email: 'john@example.com',
     phone: '+1 234 567 890',
   };
-
+  //need to replace with actual space
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
