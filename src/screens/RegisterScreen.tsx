@@ -8,11 +8,21 @@ import {
   SafeAreaView,
 } from 'react-native';
 
+/**
+ * RegisterScreen Component
+ * Handles new user registration with name, email, and password
+ * @param {object} navigation - Navigation prop for screen navigation
+ */
 const RegisterScreen = ({ navigation }: { navigation: any }) => {
+  // State management for form inputs
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  /**
+   * Handles the registration submission
+   * TODO: Implement actual registration logic
+   */
   const handleRegister = () => {
     // Implement registration logic here
     console.log('Register:', name, email, password);
@@ -20,13 +30,18 @@ const RegisterScreen = ({ navigation }: { navigation: any }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* Registration form title */}
       <Text style={styles.title}>Register</Text>
+
+      {/* Full name input field */}
       <TextInput
         style={styles.input}
         placeholder="Full Name"
         value={name}
         onChangeText={setName}
       />
+
+      {/* Email input field */}
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -35,6 +50,8 @@ const RegisterScreen = ({ navigation }: { navigation: any }) => {
         keyboardType="email-address"
         autoCapitalize="none"
       />
+
+      {/* Password input field */}
       <TextInput
         style={styles.input}
         placeholder="Password"
@@ -42,9 +59,13 @@ const RegisterScreen = ({ navigation }: { navigation: any }) => {
         onChangeText={setPassword}
         secureTextEntry
       />
+
+      {/* Registration button */}
       <TouchableOpacity style={styles.button} onPress={handleRegister}>
         <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
+
+      {/* Login link */}
       <TouchableOpacity onPress={() => navigation.navigate('Login')}>
         <Text style={styles.link}>Already have an account? Login</Text>
       </TouchableOpacity>
@@ -52,6 +73,9 @@ const RegisterScreen = ({ navigation }: { navigation: any }) => {
   );
 };
 
+/**
+ * Component styles
+ */
 const styles = StyleSheet.create({
   container: {
     flex: 1,

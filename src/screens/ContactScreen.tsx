@@ -8,11 +8,20 @@ import {
   SafeAreaView,
 } from 'react-native';
 
+/**
+ * ContactScreen Component
+ * Provides a contact form interface for users to send messages
+ */
 const ContactScreen = () => {
+  // State management for form inputs
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  /**
+   * Handles the  contact form submission
+   * TODO: Implement actual form submission logic
+   */
   const handleSubmit = () => {
     // Implement contact form submission logic here
     console.log('Contact Form:', name, email, message);
@@ -20,13 +29,18 @@ const ContactScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* Contact form title */}
       <Text style={styles.title}>Contact Us</Text>
+
+      {/* Name input field */}
       <TextInput
         style={styles.input}
         placeholder="Your Name"
         value={name}
         onChangeText={setName}
       />
+
+      {/* Email input field */}
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -35,6 +49,8 @@ const ContactScreen = () => {
         keyboardType="email-address"
         autoCapitalize="none"
       />
+
+      {/* Message input field */}
       <TextInput
         style={[styles.input, styles.messageInput]}
         placeholder="Message"
@@ -43,6 +59,8 @@ const ContactScreen = () => {
         multiline
         numberOfLines={4}
       />
+
+      {/* Submit button */}
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Send Message</Text>
       </TouchableOpacity>
@@ -50,13 +68,17 @@ const ContactScreen = () => {
   );
 };
 
+/**
+ * Component styles
+ * Defines the layout and appearance of the contact form
+ */
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 18,
   },
   title: {
-    fontSize: 24,
+    fontSize: 23,
     fontWeight: 'bold',
     marginBottom: 20,
     textAlign: 'center',

@@ -8,10 +8,20 @@ import {
   SafeAreaView,
 } from 'react-native';
 
+/**
+ * LoginScreen Component
+ * Handles user authentication through email and password
+ * @param {object} navigation - Navigation prop for screen navigation
+ */
 const LoginScreen = ({ navigation }: { navigation: any }) => {
+  // State management for form inputs
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  /**
+   * Handles the login submission
+   * TODO: Implement actual authentication logic
+   */
   const handleLogin = () => {
     // Implement login logic here
     console.log('Login:', email, password);
@@ -19,7 +29,10 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* Login form title */}
       <Text style={styles.title}>Login</Text>
+
+      {/* Email input field */}
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -28,6 +41,8 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         keyboardType="email-address"
         autoCapitalize="none"
       />
+
+      {/* Password input field */}
       <TextInput
         style={styles.input}
         placeholder="Password"
@@ -35,9 +50,13 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         onChangeText={setPassword}
         secureTextEntry
       />
+
+      {/* Login button */}
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
+
+      {/* Registration link */}
       <TouchableOpacity onPress={() => navigation.navigate('Register')}>
         <Text style={styles.link}>Don't have an account? Register</Text>
       </TouchableOpacity>
@@ -45,6 +64,9 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
   );
 };
 
+/**
+ * Component styles
+ */
 const styles = StyleSheet.create({
   container: {
     flex: 1,
